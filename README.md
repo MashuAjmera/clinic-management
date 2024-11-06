@@ -1,12 +1,17 @@
 # clinic-management
-Low Level System Design of Clinic Management System
+Low Level Backend System Design of Clinic Booking Management System.
 
 ## Entities
-- Doctor
-- Patient
+- Entity
+  - Doctor
+  - Patient
 - Booking
+- Slot
 
 ## Design Patterns
-- Facade: Booking
-- Singleton: Doctor, Patient
-- Factory: Factory
+### Creational Patterns
+- **Singleton**: Doctor, Patient are singleton classes since all the information has to be preserved.
+- **Factory**: Factory class gives the respective Bl.required
+### Structural Patterns
+- **Adapter**: EntityBl adds an entity to the entity list depending on the eype of entity passed.
+- **Facade**: BookingBl provides an interface to book both doctors and patients together.
