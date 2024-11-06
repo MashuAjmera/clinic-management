@@ -1,6 +1,6 @@
 from abc import abstractmethod
 
-from bl.base_bl.ibase_bl import IBaseBl
+from bl.ibase_bl import IBaseBl
 
 
 class IBookingBl(IBaseBl):
@@ -14,4 +14,8 @@ class IBookingBl(IBaseBl):
 
     @abstractmethod
     def show_doctor_bookings(self, name: str) -> None:
+        pass
+    
+    @abstractmethod
+    def cancel_booking(self, patient_name: str, doctor_name: str, slot_time: str) -> None:
         pass

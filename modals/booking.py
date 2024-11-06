@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from modals.doctor import Doctor
-from modals.patient import Patient
+from modals.entity_modals.doctor import Doctor
+from modals.entity_modals.patient import Patient
 from modals.slot import Slot
 
 @dataclass

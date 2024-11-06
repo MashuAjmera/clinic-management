@@ -1,21 +1,14 @@
 from abc import abstractmethod
 from typing import List
 
-from bl.base_bl.ibase_bl import IBaseBl
-from modals.doctor import Doctor
+from bl.entity_bl.entity_bl import IEntityBl
+from constants.doctor_types import DoctorTypes
+from modals.entity_modals.doctor import Doctor
 from modals.slot import Slot
 
-class IDoctorBl(IBaseBl):
-    @abstractmethod
-    def add_doctor(self, name: str, type: str) -> None:
-        pass
-
+class IDoctorBl(IEntityBl):
     @abstractmethod
     def show_doctors(self) -> None:
-        pass
-
-    @abstractmethod
-    def _get_doctor(self, name: str) -> Doctor:
         pass
 
     @abstractmethod
@@ -23,7 +16,7 @@ class IDoctorBl(IBaseBl):
         pass
 
     @abstractmethod
-    def _get_available_slots(self, doctor_name: str) -> List[Slot]:
+    def _get_available_slots(self, doctor: Doctor) -> List[Slot]:
         pass
 
     @abstractmethod
@@ -31,5 +24,5 @@ class IDoctorBl(IBaseBl):
         pass
 
     @abstractmethod
-    def add_booked_slot(self, doctor_name:str, slot: str) -> None:
+    def show_available_slots_by_type(self, doctor_type: DoctorTypes) -> None:
         pass
